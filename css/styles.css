@@ -1,0 +1,223 @@
+:root{/*Definimos estilos que aplica para todo el css*/
+    /*Custom Properties*/
+    --blanco:#ffff;
+    --negro:#212121;
+    --primario:#1f192f;
+    --secundario:#2d6073;
+    --terciario:#65b8a6;
+    --cuaternario:#b5e8c3;
+    --extra:#f0f7da;
+    --fuente-principal:3.8rem; 
+}
+/*Globales*/
+.contenedor{
+    max-width:130rem;
+    margin: 0 auto 0 auto;
+    padding-top:1rem;
+}
+.sombra{
+    -webkit-box-shadow: 4px 7px 20px 1px rgba(0,0,0,0.75);
+    -moz-boz-shadow:4px 7px 20px 1px rgba(0,0,0,0.75);
+    box-shadow: 4px 7px 20px 1px rgba(0,0,0,0.75);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+html{/*Modifica todo ll del archivo HTML*/
+    font-size: 62.5%;/*Regulariza la medida de rem*/
+    /*1rem=10px*/
+}
+body{
+    font-size: 16px;
+    font-family: "crimson text", sans-serif;
+}
+.titulo{
+    text-align: center;
+    font-size: 4rem;/*Font se usa para todo lo que tenga que ver con las letras*/
+}
+.titulo__pequeño{
+    font-size: 2rem;
+}
+/*Tipografia*/
+h1{
+    font-size: 3.5rem;
+}
+h2{
+    font-size:2.5rem;
+}
+h3{
+    font-size:1.5rem;
+}
+h1,h2,h3{
+    text-align: center;
+}
+.boton{
+    background-color: var(--extra);
+    color:var(--secundario);
+    padding:1rem;
+    margin-top:3rem;
+    font-size:2rem;
+    text-decoration:none;
+    text-transform:uppercase;
+    font-weight: bold;
+    border-radius:0.5rem;
+    width:20rem;
+    text-align:80%;
+    text-align:center;
+    border:none;
+}
+/*Barra Navegacion*/
+.nav__bg{
+    background-color: var(--primario);
+}
+.navegacion__Principal{/*Se usa ya que la navegacion usa esta etiqueta*/
+    flex-direction: column;
+    justify-content: space-between;
+    display:flex;
+}
+/* @media (min-widt: 480px){/*Acomodar la pantalla para celulares
+
+} */
+@media (min-width: 768px){/*Acomodar la pantalla a partir de que empiece a medir 768 pixeles*//*Para hacerla responsiva*/
+    .navegacion__Principal{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+/* @media (min-widt: 1400px){/*Acomodar la pantalla
+
+} */
+.navegacion__Principal a{
+    color:var(--blanco);
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1rem;
+    text-decoration: none;
+    text-align: center;
+    padding: 1rem;
+}
+.navegacion__Principal a:hover{/*Al momento de posicionar el raton en alguna zona en expecifico nos va a dar un efecto*/
+    background-color: var(--extra);
+    color: var(--primario);
+    cursor:pointer;
+}
+/*Banner*/
+.banner{
+    height:429px;
+    /* background-size: cover; */
+    background-image: url(../img/banner1.jpg);
+}
+.contenido__banner{
+    position: absolute;
+    background-color:rgba(0,0,0,.4);
+    width:100%;
+    height: 429px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;/*Alinea vertical*/
+    justify-content:center;/*Alinea Horizontal*/
+    color:var(--blanco)
+}
+/*Servicios*/
+@media (min-width:768px){
+.servicios{
+    display:grid;/*Red, nos funciona coomo una tabla con columnas o filas*/
+    grid-template-columns: 33.3% 33.3% 33.3%;/*1fr 1fr 1fr*//*Define la cantidad de columnas que tendrá el contenedor*/
+    column-gap: 1rem;/*Recomendado que sea entre uno y dos rems, gap funciona  para separar las columnas*/
+}
+}
+.servicio{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.servicio h3{
+    color:var(--secundario);
+    font-weight:400;
+    text-align:center;
+}
+.servicio p{
+    line-height: 2;
+}
+.servicios .icono{
+    height: 15rem;
+    width:15rem;
+    background-color:var(--extra);
+    border-radius:50%;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+/*Contacto*/
+.formulario{
+    background-color: #2d6073;
+    width:min(60rem,100%); 
+    margin:0 auto;/*Acepta al elemento como un bloque completo y se centra hasa abajo de todos los elementos*/
+    padding: 2rem;/*Espacio que tiene el contenido antes de entrar a la border*/ 
+    border-radius: 1rem;
+}
+@media(min-width:768px){
+    .contenedor__campos{
+        display:grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto 20rem;
+        column-gap:1rem;
+    }
+    .campo:nth-child(3),
+    .campo:nth-child(4){
+    grid-column: 1/3;/*Posicionar las dos columnas 1 a 3*/
+}}
+.formulario fieldset{
+    border:1mm;
+}
+.formulario legend{
+    text-align:center;
+    font-size:2rem;
+    text-transform: uppercase ;
+    font-weight:700;
+    color: var(--blanco);
+    margin-bottom: 2rem;
+}
+
+.servicio .img {    
+    height: 25rem;
+    width:100%;
+    background-repeat: no-repeat;
+    display:flex;
+    background-position: center;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.campo{
+    margin-bottom:1rem;
+}
+
+.campo label{
+    color: var(--blanco);
+    font-weight:bold;
+    margin:0.5rem;
+    display:block;
+}
+.campo input{
+    width:90%;
+    padding:1.5rem;
+    border-radius: 1rem;
+    border:none;
+}
+.campo textarea{
+    height: 14rem;
+}
+.input__text{
+    width:90%;
+    padding:1.5rem;
+    border-radius:0.5rem;
+    border:none;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
